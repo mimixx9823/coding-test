@@ -7,9 +7,11 @@
 //   .readFileSync(projectPath + devPath)
 //   .toString()
 //   .split(" ");
+import dotenv from 'dotenv';
 
-import { colorize } from "./util/log-color";
+import { colorize } from './util/log-color';
 
+dotenv.config();
 async function run() {
   const testId = process.env.test_id;
   try {

@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "TS To JS",
+			"type": "shell",
+			"command": "tsc \"./src/programmers/pm_${input:test_id}/pm-${input:test_id}.ts\"",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": []
+		}
+	],
+	"inputs": [
+		{
+			"id": "test_id",
+			"type": "promptString",
+			"description": "Enter value for testId",
+			"default": ""
+		}
+	]
+}

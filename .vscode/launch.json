@@ -14,9 +14,7 @@
         "sourceMaps": true, // true: 디버깅 가능
         "cwd": "${workspaceRoot}", // 시작시 태스크 러너의 현재 작업 디렉토리
         "console": "integratedTerminal", // intergratedTerminal: vscode 내부 터미널
-        "env": {
-            "test_id" : "176962"
-            }
+        "envFile": "${workspaceFolder}/.env",
         },
         {
         "type": "node",
@@ -28,9 +26,7 @@
         "sourceMaps": true,
         "cwd": "${workspaceRoot}",
         "console": "integratedTerminal",
-        "env": {
-            "test_id" : "176962"
-            }
+        "envFile": "${workspaceFolder}/.env",
         }
-    ]
+    ],
 }
