@@ -24,7 +24,7 @@ async function run() {
     testCaseModule.testCase.testCases.forEach((d: any) => {
       console.log("\n");
       const res = solutionModule.solution(d.testcase);
-      if (res == d.res) {
+      if (JSON.stringify(res) === JSON.stringify(d.res)) {
         console.log(colorize("Success", 42));
       } else {
         console.log(colorize("Fail", 41));
@@ -32,8 +32,9 @@ async function run() {
 
       console.log("testCase:");
       console.log(d.testcase);
-
-      console.log("result:");
+      console.log("TO-BE:");
+      console.log(d.res);
+      console.log("AS-IS:");
       console.log(res);
     });
     return solutionModule.solution;

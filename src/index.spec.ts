@@ -13,7 +13,7 @@ describe("Run TestCases", () => {
 
   test("test start", () => {
     testCaseModule.testCase.testCases.forEach((d: any) => {
-      expect(solutionModule.solution(d.testcase)).toBe(d.res);
+      expect(solutionModule.solution(d.testcase)).toStrictEqual(d.res);
     });
   });
 });
