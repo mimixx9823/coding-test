@@ -1,4 +1,5 @@
-import { solution } from "./programmers/pm_176962/pm_176962";
+import { solution } from "./programmers/pm_176962/pm-176962";
+import testCase from "./programmers/pm_176962/test-cases";
 
 // beakjoon
 // let fs = require("fs");
@@ -11,10 +12,4 @@ import { solution } from "./programmers/pm_176962/pm_176962";
 //   .split(" ");
 
 // programmers
-let input = [
-  ["korean", "11:40", "30"],
-  ["english", "12:10", "20"],
-  ["math", "12:30", "40"],
-];
-
-console.log(solution(input));
+// testCase.getCases().forEach((d) => conssole.log(solution(d)));
