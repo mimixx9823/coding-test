@@ -1,6 +1,3 @@
-import { solution } from "./programmers/pm_176962/pm-176962";
-import testCase from "./programmers/pm_176962/test-cases";
-
 // beakjoon
 // let fs = require("fs");
 // const bjPath = "/dev/stdin";
@@ -11,5 +8,36 @@ import testCase from "./programmers/pm_176962/test-cases";
 //   .toString()
 //   .split(" ");
 
-// programmers
-// testCase.getCases().forEach((d) => conssole.log(solution(d)));
+import { colorize } from "./util/log-color";
+
+async function run() {
+  const testId = process.env.test_id;
+  try {
+    const solutionModule = await import(
+      `./programmers/pm_${testId}/pm-${testId}`
+    );
+    const testCaseModule = await import(
+      `./programmers/pm_${testId}/test-cases`
+    );
+    testCaseModule.testCase.testCases.forEach((d: any) => {
+      console.log("\n");
+      const res = solutionModule.solution(d.testcase);
+      if (res == d.res) {
+        console.log(colorize("Success", 42));
+      } else {
+        console.log(colorize("Fail", 41));
+      }
+
+      console.log("testCase:");
+      console.log(d.testcase);
+
+      console.log("result:");
+      console.log(res);
+    });
+    return solutionModule.solution;
+  } catch (error) {
+    console.error(`unknown test id: ${testId}`, error);
+    throw error;
+  }
+}
+run();

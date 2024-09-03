@@ -1,11 +1,19 @@
-import { solution } from "./programmers/pm_176962/pm-176962";
-import testCase from "./programmers/pm_176962/test-cases";
+describe("Run TestCases", () => {
+  const testId = process.env.test_id;
+  let solutionModule: any;
+  let testCaseModule: any;
 
-describe("group", () => {
-  let index = 0;
-  testCase.testCases.forEach((d) => {
-    test("test" + ++index, () => {
-      expect(solution(d.testcase)).toBe(d.res);
+  beforeAll(async () => {
+    testCaseModule = await import(`./programmers/pm_${testId}/test-cases`);
+  });
+
+  beforeEach(async () => {
+    solutionModule = await import(`./programmers/pm_${testId}/pm-${testId}`);
+  });
+
+  test("test start", () => {
+    testCaseModule.testCase.testCases.forEach((d: any) => {
+      expect(solutionModule.solution(d.testcase)).toBe(d.res);
     });
   });
 });

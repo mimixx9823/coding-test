@@ -6,7 +6,7 @@
     "configurations": [
         {
         "type": "node", //세팅의 타입
-        "name": "Debug Run", // 어떤 이름으로 부를건지
+        "name": "[Test_ID] Run All TestCases", // 어떤 이름으로 부를건지
         "request": "launch", // launch: 실행하는거, attach: 실행되어 있는거에 붙는거
         "runtimeExecutable": "npm", // 어떤걸로 실행 할건지 npm, node, yarn...
         "runtimeArgs": ["run", "dev"], // npm run start:debug
@@ -14,7 +14,23 @@
         "sourceMaps": true, // true: 디버깅 가능
         "cwd": "${workspaceRoot}", // 시작시 태스크 러너의 현재 작업 디렉토리
         "console": "integratedTerminal", // intergratedTerminal: vscode 내부 터미널
-        "env": {}
+        "env": {
+            "test_id" : "176962"
+            }
+        },
+        {
+        "type": "node",
+        "name": "[Test_ID] Run TestCase",
+        "request": "launch",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["test"],
+        "skipFiles": ["<node_internals>/**"],
+        "sourceMaps": true,
+        "cwd": "${workspaceRoot}",
+        "console": "integratedTerminal",
+        "env": {
+            "test_id" : "176962"
+            }
         }
     ]
 }

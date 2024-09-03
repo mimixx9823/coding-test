@@ -1,6 +1,6 @@
 import { TestCaseClass } from "../../type/test-case-type";
 
-const testCase = new TestCaseClass<string[][], string[]>(
+export const testCase = new TestCaseClass<string[][], string[]>(
   [
     [
       ["korean", "11:40", "30"],
@@ -27,4 +27,3 @@ const testCase = new TestCaseClass<string[][], string[]>(
     ["bbb", "ccc", "aaa"],
   ]
 );
-export default testCase;
