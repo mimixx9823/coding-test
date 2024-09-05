@@ -23,7 +23,7 @@ async function run() {
     );
     testCaseModule.testCase.testCases.forEach((d: any, i: any) => {
       let check = true;
-      if (process.env.case_id && parseInt(process.env.case_id) > 0) {
+      if (process.env.case_id && parseInt(process.env.case_id) >= 0) {
         if (i != parseInt(process.env.case_id)) {
           check = false;
         }
