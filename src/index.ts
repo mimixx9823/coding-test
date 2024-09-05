@@ -15,9 +15,7 @@ dotenv.config();
 async function run() {
   const testId = process.env.test_id;
   try {
-    const solutionModule = await import(
-      `./programmers/pm_${testId}/pm-${testId}`
-    );
+    const solutionModule = await import(`./programmers/pm_${testId}/solution`);
     const testCaseModule = await import(
       `./programmers/pm_${testId}/test-cases`
     );

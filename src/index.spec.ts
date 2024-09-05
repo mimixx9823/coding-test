@@ -8,7 +8,7 @@ describe("Run TestCases", () => {
   });
 
   beforeEach(async () => {
-    solutionModule = await import(`./programmers/pm_${testId}/pm-${testId}`);
+    solutionModule = await import(`./programmers/pm_${testId}/solution`);
   });
 
   test("test start", () => {
