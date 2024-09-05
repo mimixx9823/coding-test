@@ -21,21 +21,29 @@ async function run() {
     const testCaseModule = await import(
       `./programmers/pm_${testId}/test-cases`
     );
-    testCaseModule.testCase.testCases.forEach((d: any) => {
-      console.log("\n");
-      const res = solutionModule.solution(d.testcase);
-      if (JSON.stringify(res) === JSON.stringify(d.res)) {
-        console.log(colorize("Success", 42));
-      } else {
-        console.log(colorize("Fail", 41));
+    testCaseModule.testCase.testCases.forEach((d: any, i: any) => {
+      let check = true;
+      if (process.env.case_id && parseInt(process.env.case_id) > 0) {
+        if (i != parseInt(process.env.case_id)) {
+          check = false;
+        }
       }
+      if (check) {
+        console.log("\n");
+        const res = solutionModule.solution(d.testcase);
+        if (JSON.stringify(res) === JSON.stringify(d.res)) {
+          console.log(colorize("Success", 42));
+        } else {
+          console.log(colorize("Fail", 41));
+        }
 
-      console.log("testCase:");
-      console.log(d.testcase);
-      console.log("TO-BE:");
-      console.log(d.res);
-      console.log("AS-IS:");
-      console.log(res);
+        console.log("testCase:");
+        console.log(d.testcase);
+        console.log("TO-BE:");
+        console.log(d.res);
+        console.log("AS-IS:");
+        console.log(res);
+      }
     });
     return solutionModule.solution;
   } catch (error) {
