@@ -4,7 +4,7 @@
 		{
 			"label": "TS To JS",
 			"type": "shell",
-			"command": "tsc \"./src/programmers/pm_${input:test_id}/pm-${input:test_id}.ts\"",
+			"command": "tsc \"./src/programmers/pm_${input:test_id}/solution.ts\"",
 			"group": {
 				"kind": "build",
 				"isDefault": true
