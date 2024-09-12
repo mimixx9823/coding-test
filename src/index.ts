@@ -28,6 +28,7 @@ async function run() {
       }
       if (check) {
         console.log("\n");
+        let testcase = JSON.parse(JSON.stringify(d.testcase));
         const res = solutionModule.solution(d.testcase);
         if (JSON.stringify(res) === JSON.stringify(d.res)) {
           console.log(colorize("Success", 42));
@@ -36,7 +37,7 @@ async function run() {
         }
 
         console.log("testCase:");
-        console.log(d.testcase);
+        console.log(testcase);
         console.log("TO-BE:");
         console.log(d.res);
         console.log("AS-IS:");
