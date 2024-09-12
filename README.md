@@ -34,12 +34,7 @@
    ```
 2. `test-cases.ts`의 TestCaseClass의 제네릭 타입을 테스트케이스와 알맞게 변경 후, 케이스별로 배열로 묶어서 생성.
 
-<style>
-    .container {
-        margin-left: 50px;
-    }
-</style>
-<div class = "container">
+<div>
   <div>
   <details>
     <summary><b>예시 1</b></summary>
